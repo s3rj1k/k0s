@@ -99,7 +99,7 @@ func (s *BackupSuite) TestK0sGetsUp() {
 		for i := range s.ControllerCount - 1 {
 			i := i + 1
 			s.PutFile(s.ControllerNode(i), "/etc/k0s/k0s.yaml", config)
-			s.Require().NoError(s.InitController(i, "--enable-worker", token))
+			s.Require().NoError(s.InitController(i, token))
 		}
 	}
 
